@@ -7,52 +7,65 @@
     <link rel="stylesheet" href="style.css">
     <style>
         body {
-            font-family: 'Garamond', serif; /* Sophisticated font choice for a historic feel */
-            background-color: #121212; /* Dark background */
-            color: #f0e9d2; /* Light gold color for text */
+            font-family: 'Garamond', serif;
+            background-color: #121212;
+            color: #f0e9d2;
             margin: 0;
             padding: 0;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
-        header, footer {
+        header {
             text-align: center;
             padding: 20px;
             width: 100%;
-            background-color: #1a1a1a; /* Slightly lighter background for header and footer */
+            background-color: #1a1a1a;
             color: #ffffff;
+        }
+        nav {
+            margin-top: 10px;
+            font-size: 18px;
+        }
+        nav a {
+            color: #d4af37;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+        nav a:hover {
+            text-decoration: underline;
         }
         .main-content {
             display: flex;
             flex-direction: column;
             align-items: center;
             width: 90%;
-            max-width: 960px; /* More appropriate max width */
+            max-width: 960px;
             padding: 20px;
             margin-top: 20px;
-            background: #1a1a1a; /* Dark theme for content background */
+            background: #1a1a1a;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
-        .image-container {
+        .image-container, .text-content {
             width: 100%;
-            padding: 10px;
             text-align: center;
+            padding: 10px;
         }
         img {
-            width: 100%; /* Full width of container but maintain aspect ratio */
-            max-width: 300px; /* Limits size to not overwhelm text */
+            max-width: 300px;
             height: auto;
-            margin-bottom: 20px;
-        }
-        .text-content {
-            text-align: justify;
-            padding: 10px;
-            line-height: 1.6; /* Improves readability */
+            margin: 20px auto;
         }
         ul {
-            padding-left: 20px; /* Proper indentation for bullets */
+            text-align: left;
+            padding-left: 40px;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            width: 100%;
+            color: #ffffff;
         }
     </style>
 </head>
@@ -60,12 +73,18 @@
     <header>
         <h1>Welcome to Cody's Viking Funeral</h1>
         <p>A fiery farewell to the 30s as I embark on the adventures of the 40s.</p>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="register.html">Sign Up</a>
+            <a href="contestants.html">RSVP List</a>
+        </nav>
     </header>
     <div class="main-content">
         <div class="image-container">
             <img src="images/Vikingship.jpeg" alt="Viking Ship">
         </div>
         <div class="text-content">
+            <h2>Event Details</h2>
             <p>Greetings, Brave Souls,</p>
             <p>As I prepare to bid a fiery farewell to my roaring 30s, I invite you to join me for a day of intrigue and a night of remembrance. Our adventure begins with a daring <strong>Mafia-style water gun battle</strong>, where alliances are tested and only the cunning will survive. As dusk falls, gather around as we ignite the night with a <strong>Viking funeral</strong> to honor the decade past.</p>
             <ul>
