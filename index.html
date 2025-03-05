@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cody's 40th Viking Funeral</title>
+    <link rel="stylesheet" href="style.css">
     <style>
         body {
             font-family: 'Arial', sans-serif; /* Clear and readable font */
@@ -23,8 +24,9 @@
         }
         .main-content {
             display: flex;
-            justify-content: space-around;
-            align-items: center;
+            justify-content: center;
+            align-items: flex-start; /* Align items at the start of the flex container */
+            flex-wrap: wrap; /* Allows items to wrap as needed */
             width: 80%;
             max-width: 1200px; /* Adjust based on your design preferences */
             padding: 20px;
@@ -33,21 +35,23 @@
             margin: 20px;
         }
         .text-content {
-            flex: 3;
+            order: 2; /* Centers the text content */
+            flex: 2 100%; /* Allows the text content to take more space and center */
             padding: 10px;
-            margin: 10px;
-            order: 2; /* Adjust text position to the middle */
+            text-align: center; /* Center aligns the text */
         }
         .image-container {
             flex: 1;
             padding: 10px;
             text-align: center;
+            width: 100%; /* Full width to maintain aspect ratio */
+            order: 1; /* Order of images */
         }
         img {
             max-width: 100%; /* Responsive image settings */
             height: auto;
             display: block; /* Ensures the image does not inline */
-            margin: 20px auto; /* Centers the image and adds spacing */
+            margin: 10px auto; /* Centers the image and adds spacing */
         }
     </style>
 </head>
@@ -58,7 +62,7 @@
     </header>
     <div class="main-content">
         <div class="image-container">
-            <img src="images/Vikingship.jpeg">
+            <img src="images/Vikingship.jpeg" alt="Viking Ship">
         </div>
         <div class="text-content">
             <h2>Event Details</h2>
@@ -71,7 +75,7 @@
             </ul>
         </div>
         <div class="image-container">
-            <img src="images/Mugshot.jpeg">
+            <img src="images/Mugshot.jpeg" alt="Cody's Profile Picture">
         </div>
     </div>
     <footer>
