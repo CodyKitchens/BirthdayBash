@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RSVP List</title> <!-- Updated title -->
-    <link rel="stylesheet" href="style.css"> <!-- Make sure your CSS path is correct -->
+    <title>RSVP List</title> <!-- Title of the tab in the browser -->
+    <link rel="stylesheet" href="style.css"> <!-- Ensure the CSS path is correct -->
 </head>
 <body>
     <header>
-        <h1>VIP Guest List</h1> <!-- Updated header -->
+        <h1>RSVP List</h1> <!-- Updated header to match the new title -->
     </header>
     <section id="contestants">
         <!-- Data will be loaded here by the script below -->
@@ -24,7 +24,7 @@
             })
             .then(data => {
                 let contestantsDiv = document.getElementById('contestants');
-                if (!data || data.length === 0) {
+                if (!data || data.length == 0) {
                     contestantsDiv.innerHTML = 'No data available';
                     return;
                 }
