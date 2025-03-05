@@ -1,6 +1,6 @@
 <script>
     document.addEventListener("DOMContentLoaded", function() {
-        fetch('https://sheetdb.io/api/v1/a853wgjotvjmp')  // Make sure this URL is correct
+        fetch('https://sheetdb.io/api/v1/a853wgjotvjmp')  // Replace with your actual API URL
         .then(response => response.json())
         .then(data => {
             let contestantsDiv = document.getElementById('contestants');
@@ -8,7 +8,7 @@
                 let contestantDiv = document.createElement('div');
                 contestantDiv.className = 'contestant';
                 contestantDiv.innerHTML = `
-                    <h3>${contestant['Name']} (${contestant['Nick name'] || 'No nickname'})</h3>
+                    <h3>${contestant['Name']} (${contestant['Nickname'] || 'No nickname'})</h3>
                     <p>Attending: ${contestant['You in?']}</p>
                     <p>Birthday Note: ${contestant["If you can't make it. Leave him a birthday note."] || "No note left."}</p>
                 `;
