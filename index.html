@@ -3,61 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cody's 40th Birthday Bash!</title>
+    <title>Cody's 40th Viking Funeral</title>
     <link rel="stylesheet" href="style.css">
     <style>
         body {
-            font-family: 'Garamond', serif; /* Elegant typeface for the theme */
-            background-color: #1a1a1a; /* Dark background for a moody feel */
-            color: #d4af37; /* Gold text to match the Viking theme */
+            font-family: 'Arial', sans-serif; /* Clear and readable font */
+            background-color: #101010; /* Dark background for the Viking theme */
+            color: #d4af37; /* Gold color for elegance and readability */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         header, footer {
             text-align: center;
             padding: 20px;
+            width: 100%;
+            color: #ffffff; /* Ensures text is visible against potentially dark background */
         }
         .main-content {
-            max-width: 800px; /* Limits content width for better readability */
-            margin: auto;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 80%;
+            max-width: 1200px; /* Adjust based on your design preferences */
             padding: 20px;
+            background: #282828; /* Slightly lighter background for content areas */
+            border-radius: 8px; /* Soften the edges of the content blocks */
+            margin: 20px;
         }
-        a {
-            color: #e4e4e4; /* Light link color for contrast */
+        .text-content {
+            flex: 1;
+            padding: 10px;
+            margin: 10px;
+        }
+        .image-container {
+            flex: 1;
+            padding: 10px;
+            text-align: center;
         }
         img {
-            width: 100%; /* Responsive image settings */
+            max-width: 100%; /* Responsive image settings */
             height: auto;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Join Cody’s Viking Funeral: A Farewell to the 30s</h1>
+        <h1>Welcome to Cody's Viking Funeral</h1>
+        <p>A fiery farewell to the 30s as I embark on the adventures of the 40s.</p>
     </header>
     <div class="main-content">
-        <p>
-            Greetings, Brave Souls,
-        </p>
-        <p>
-            As I prepare to bid a fiery farewell to my roaring 30s, I invite you to join me for a day of intrigue and a night of remembrance. Our adventure begins with a daring <strong>Mafia-style water gun battle</strong>, where alliances are tested and only the cunning will survive. As dusk falls, gather around as we ignite the night with a <strong>Viking funeral</strong> to honor the decade past.
-        </p>
-        <p>
-            The ship sets sail at [Location], on [Date]. Daytime skirmishes commence at 12:00 PM, leading to evening rites and revelries starting at sunset.
-        </p>
-        <p>
-            Come clad in your best Viking or funeral attire to partake in the ceremonies, share a roast or eulogy in good spirits, and laugh at the memories we've forged. After we pay our respects, the night will conclude with cigars, camaraderie, and a poker tournament under the stars.
-        </p>
-        <p>
-            <strong>Note:</strong> The evenings celebration is for adults only. Let us relive the glory days and send off the 30s with a proper Viking goodbye, unburdened by the watchful eyes of the young.
-        </p>
-        <p>
-            Your presence is both an honor and a boon. Please RSVP by [RSVP Deadline] to secure your place in the shield wall or at the poker table.
-        </p>
-        <p>
-            <a href="register.html">RSVP Here</a>
-        </p>
+        <div class="image-container">
+            <img src="images/viking_ship.jpg" alt="Viking Ship">
+        </div>
+        <div class="text-content">
+            <h2>Event Details</h2>
+            <p>Join me on a daring adventure with a Mafia-style water gun battle by day and a Viking funeral by night to mark the end of an era. We'll honor the past with fire, laughter, and stories.</p>
+            <h2>Day's Schedule</h2>
+            <ul>
+                <li>12:00 PM - Water Gun Battle Begins</li>
+                <li>6:00 PM - Evening Festivities & Viking Ship Burning</li>
+                <li>9:00 PM - Poker and Cigars</li>
+            </ul>
+        </div>
+        <div class="image-container">
+            <img src="images/profile_picture.jpg" alt="Cody's Profile Picture">
+        </div>
     </div>
     <footer>
-        <p>Need help? Email us at <a href="mailto:Cody.Kitchens@gmail.com">Cody.Kitchens@gmail.com</a></p>
+        <p>Questions? Contact me at <a href="mailto:Cody.Kitchens@gmail.com">Cody.Kitchens@gmail.com</a></p>
     </footer>
 </body>
 </html>
