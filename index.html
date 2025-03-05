@@ -7,9 +7,9 @@
     <link rel="stylesheet" href="style.css">
     <style>
         body {
-            font-family: 'Arial', sans-serif; /* Clear and readable font */
-            background-color: #101010; /* Dark background for the Viking theme */
-            color: #d4af37; /* Gold color for elegance and readability */
+            font-family: 'Garamond', serif; /* Sophisticated font choice for a historic feel */
+            background-color: #121212; /* Dark background */
+            color: #f0e9d2; /* Light gold color for text */
             margin: 0;
             padding: 0;
             display: flex;
@@ -20,38 +20,39 @@
             text-align: center;
             padding: 20px;
             width: 100%;
-            color: #ffffff; /* Ensures text is visible against potentially dark background */
+            background-color: #1a1a1a; /* Slightly lighter background for header and footer */
+            color: #ffffff;
         }
         .main-content {
             display: flex;
-            justify-content: center;
-            align-items: flex-start; /* Align items at the start of the flex container */
-            flex-wrap: wrap; /* Allows items to wrap as needed */
-            width: 80%;
-            max-width: 1200px; /* Adjust based on your design preferences */
+            flex-direction: column;
+            align-items: center;
+            width: 90%;
+            max-width: 960px; /* More appropriate max width */
             padding: 20px;
-            background: #282828; /* Slightly lighter background for content areas */
-            border-radius: 8px; /* Soften the edges of the content blocks */
-            margin: 20px;
-        }
-        .text-content {
-            order: 2; /* Centers the text content */
-            flex: 2 100%; /* Allows the text content to take more space and center */
-            padding: 10px;
-            text-align: center; /* Center aligns the text */
+            margin-top: 20px;
+            background: #1a1a1a; /* Dark theme for content background */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
         .image-container {
-            flex: 1;
+            width: 100%;
             padding: 10px;
             text-align: center;
-            width: 100%; /* Full width to maintain aspect ratio */
-            order: 1; /* Order of images */
         }
         img {
-            max-width: 100%; /* Responsive image settings */
+            width: 100%; /* Full width of container but maintain aspect ratio */
+            max-width: 300px; /* Limits size to not overwhelm text */
             height: auto;
-            display: block; /* Ensures the image does not inline */
-            margin: 10px auto; /* Centers the image and adds spacing */
+            margin-bottom: 20px;
+        }
+        .text-content {
+            text-align: justify;
+            padding: 10px;
+            line-height: 1.6; /* Improves readability */
+        }
+        ul {
+            padding-left: 20px; /* Proper indentation for bullets */
         }
     </style>
 </head>
@@ -65,14 +66,12 @@
             <img src="images/Vikingship.jpeg" alt="Viking Ship">
         </div>
         <div class="text-content">
-            <h2>Event Details</h2>
-            <p>Join me on a daring adventure with a Mafia-style water gun battle by day and a Viking funeral by night to mark the end of an era. We'll honor the past with fire, laughter, and stories.</p>
-            <h2>Day's Schedule</h2>
-            <ul>
-                <li>12:00 PM - Water Gun Battle Begins</li>
-                <li>6:00 PM - Evening Festivities & Viking Ship Burning</li>
-                <li>9:00 PM - Poker and Cigars</li>
-            </ul>
+            <p>Greetings, Brave Souls,</p>
+            <p>As I prepare to bid a fiery farewell to my roaring 30s, I invite you to join me for a day of intrigue and a night of remembrance. Our adventure begins with a daring <strong>Mafia-style water gun battle</strong>, where alliances are tested and only the cunning will survive. As dusk falls, gather around as we ignite the night with a <strong>Viking funeral</strong> to honor the decade past.</p>
+            <p>The ship sets sail at [Location], on [Date]. Daytime skirmishes commence at 12:00 PM, leading to evening rites and revelries starting at sunset.</p>
+            <p>Come clad in your best Viking or funeral attire to partake in the ceremonies, share a roast or eulogy in good spirits, and laugh at the memories we've forged. After we pay our respects, the night will conclude with cigars, camaraderie, and a poker tournament under the stars.</p>
+            <p><strong>Note:</strong> This celebration is for adults only. Let us relive the glory days and send off the 30s with a proper Viking goodbye, unburdened by the watchful eyes of the young.</p>
+            <p>Your presence is both an honor and a boon. Please RSVP by [RSVP Deadline] to secure your place in the shield wall or at the poker table.</p>
         </div>
         <div class="image-container">
             <img src="images/Mugshot.jpeg" alt="Cody's Profile Picture">
