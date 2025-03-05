@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cody's 40th Viking Funeral</title>
-    <link rel="stylesheet" href="style.css">
     <style>
         body {
             font-family: 'Arial', sans-serif; /* Clear and readable font */
@@ -34,9 +33,10 @@
             margin: 20px;
         }
         .text-content {
-            flex: 1;
+            flex: 3;
             padding: 10px;
             margin: 10px;
+            order: 2; /* Adjust text position to the middle */
         }
         .image-container {
             flex: 1;
@@ -46,6 +46,8 @@
         img {
             max-width: 100%; /* Responsive image settings */
             height: auto;
+            display: block; /* Ensures the image does not inline */
+            margin: 20px auto; /* Centers the image and adds spacing */
         }
     </style>
 </head>
@@ -56,7 +58,7 @@
     </header>
     <div class="main-content">
         <div class="image-container">
-            <img src="images/viking_ship.jpg" alt="Viking Ship">
+            <img src="images/Vikingship.jpeg" alt="Viking Ship">
         </div>
         <div class="text-content">
             <h2>Event Details</h2>
@@ -69,7 +71,7 @@
             </ul>
         </div>
         <div class="image-container">
-            <img src="images/profile_picture.jpg" alt="Cody's Profile Picture">
+            <img src="images/Mugshot.jpeg" alt="Cody's Profile Picture">
         </div>
     </div>
     <footer>
