@@ -10,14 +10,28 @@
     <header>
         <h1>Meet the Contestants</h1>
     </header>
-    <section>
-        <!-- Example contestant -->
-        <div class="contestant">
-            <img src="path_to_image.jpg" alt="Contestant Name">
-            <h3>Contestant Name</h3>
-        </div>
-        <!-- Add more contestants here -->
+    <section id="contestants">
+        <!-- Contestants will be loaded here by the script below -->
     </section>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('https://sheetdb.io/api/v1/a853wgjotvjmp')
+            .then(response => response.json())
+            .then(data => {
+                let contestantsDiv = document.getElementById('contestants');
+                data.forEach(contestant => {
+                    let contestantDiv = document.createElement('div');
+                    contestantDiv.className = 'contestant';
+                    contestantDiv.innerHTML = `
+                        <h3>${contestant.Name}</h3>
+                        <img src="${contestant.Photo}" alt="Photo of ${contestant.Name}" style="width:100px; height:auto;">
+                    `;
+                    contestantsDiv.appendChild(contestantDiv);
+                });
+            })
+            .catch(error => console.error('Error loading the data: ', error));
+        });
+    </script>
     <footer>
         <p>Return to <a href="index.html">Home Page</a></p>
     </footer>
