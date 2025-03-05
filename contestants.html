@@ -23,8 +23,8 @@
                     let contestantDiv = document.createElement('div');
                     contestantDiv.className = 'contestant';
                     contestantDiv.innerHTML = `
-                        <h3>${contestant.Name}</h3>
-                        <img src="${contestant.Photo}" alt="Photo of ${contestant.Name}" style="width:100px; height:auto;">
+                        <h3>${contestant['Contestant Name']}</h3>
+                        <img src="${contestant.Photo}" alt="Photo of ${contestant['Contestant Name']}" style="width:100px; height:auto;">
                     `;
                     contestantsDiv.appendChild(contestantDiv);
                 });
