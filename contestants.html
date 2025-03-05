@@ -23,9 +23,8 @@
                     let contestantDiv = document.createElement('div');
                     contestantDiv.className = 'contestant';
                     contestantDiv.innerHTML = `
-                        <h3>${contestant['Contestant Name']} (${contestant['Nick name']})</h3>
-                        <!-- Display image if you choose to add it later -->
-                        <!-- <img src="${contestant['Photo URL']}" alt="Photo of ${contestant['Contestant Name']}" style="width:100px; height:auto;"> -->
+                        <h3>${contestant['Name']} (${contestant['Nick name']})</h3>
+                        <!-- You can add more details or images if necessary -->
                     `;
                     contestantsDiv.appendChild(contestantDiv);
                 });
