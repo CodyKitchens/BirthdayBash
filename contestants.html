@@ -3,28 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RSVP List</title> <!-- Title of the tab in the browser -->
+    <title>RSVP List - Cody's 40th Viking Funeral</title>
     <link rel="stylesheet" href="style.css"> <!-- Ensure the CSS path is correct -->
+    <style>
+        body {
+            font-family: 'Garamond', serif;
+            background-color: #121212;
+            color: #f0e9d2;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        header, footer {
+            text-align: center;
+            padding: 20px;
+            width: 100%;
+            background-color: #1a1a1a;
+            color: #ffffff;
+        }
+        nav {
+            margin-top: 10px;
+            font-size: 18px;
+        }
+        nav a {
+            color: #d4af37;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            display: flex;
+            width: 90%;
+            max-width: 1200px;
+            margin-top: 20px;
+        }
+        .side {
+            flex: 1;
+            padding: 20px;
+            background: #fff;
+            border: 1px solid #ccc;
+            margin: 10px;
+            color: #333;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1>RSVP List</h1> <!-- Updated header to match the new title -->
+        <h1>RSVP and Event Countdown</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="register.html">Sign Up</a>
+            <a href="contestants.html">RSVP List</a>
+        </nav>
     </header>
-    <section id="contestants">
-        <!-- Data will be loaded here by the script below -->
-    </section>
+    <div class="container">
+        <div class="side" id="contestants">
+            <!-- RSVP List will load here -->
+        </div>
+        <div class="side" id="timerSection">
+            <h2>Countdown to Event</h2>
+            <div id="timer">Loading timer...</div>
+        </div>
+    </div>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
+            // Fetching RSVP List
             fetch('https://sheetdb.io/api/v1/a853wgjotvjmp')
-            .then(response => {
-                if (!response.ok) {  // Check if response came back fine
-                    throw new Error('Network response was not ok: ' + response.statusText);
-                }
-                return response.json();
-            })
+            .then(response => response.json())
             .then(data => {
                 let contestantsDiv = document.getElementById('contestants');
-                if (!data || data.length == 0) {
+                if (!data || data.length === 0) {
                     contestantsDiv.innerHTML = 'No data available';
                     return;
                 }
@@ -39,14 +93,26 @@
                     contestantsDiv.appendChild(contestantDiv);
                 });
             })
-            .catch(error => {
-                console.error('Failed to fetch data:', error);
-                document.getElementById('contestants').innerHTML = 'Failed to load data.';
-            });
+            .catch(error => console.error('Failed to fetch data:', error));
+
+            // Countdown Timer Script
+            const eventDate = new Date('2025-04-12T18:00:00-05:00'); // Countdown to 6 PM CDT, April 12, 2025
+            const timerContainer = document.getElementById('timer');
+
+            function updateTimer() {
+                const now = new Date();
+                const diff = eventDate - now;
+
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+                timerContainer.innerHTML = `${days} days ${hours} hours ${minutes} minutes ${seconds} seconds remaining`;
+            }
+
+            setInterval(updateTimer, 1000);
         });
     </script>
     <footer>
-        <p>Return to <a href="index.html">Home Page</a></p>
-    </footer>
-</body>
-</html>
+        <
