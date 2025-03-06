@@ -79,36 +79,29 @@
             <a href="contestants.html">RSVP List</a>
         </nav>
     </header>
-    <div id="countdown">
-        <p>Time until the event starts:</p>
-        <div id="timer"></div>
-    </div>
     <div class="main-content">
-        <!-- Your main content here -->
+        <div class="image-container">
+            <img src="images/Vikingship.jpeg" alt="Viking Ship">
+        </div>
+        <div class="text-content">
+            <h2>Event Details</h2>
+            <p>Greetings, Brave Souls,</p>
+            <p>As I prepare to bid a fiery farewell to my roaring 30s, I invite you to join me for a day of intrigue and a night of remembrance. Our adventure begins with a daring <strong>Mafia-style water gun battle</strong>, where alliances are tested and only the cunning will survive. As dusk falls, gather around as we ignite the night with a <strong>Viking funeral</strong> to honor the decade past.</p>
+            <ul>
+                <li><strong>12:00 PM:</strong> Mafia-style Water Gun Battle Begins</li>
+                <li><strong>6:00 PM:</strong> Viking Funeral Ceremony & Ship Burning</li>
+                <li><strong>9:00 PM:</strong> Cigars, Camaraderie, and Poker Tournament</li>
+            </ul>
+            <p>Come clad in your best Viking or funeral attire to partake in the ceremonies, share a roast or eulogy in good spirits, and laugh at the memories we've forged. After we pay our respects, the night will conclude with cigars, camaraderie, and a poker tournament under the stars.</p>
+            <p><strong>Note:</strong> This celebration is for adults only. Let us relive the glory days and send off the 30s with a proper Viking goodbye, unburdened by the watchful eyes of the young.</p>
+            <p>Your presence is both an honor and a boon. Please RSVP by [RSVP Deadline] to secure your place in the shield wall or at the poker table.</p>
+        </div>
+        <div class="image-container">
+            <img src="images/Mugshot.jpeg" alt="Cody's Profile Picture">
+        </div>
     </div>
     <footer>
         <p>Questions? Contact me at <a href="mailto:Cody.Kitchens@gmail.com">Cody.Kitchens@gmail.com</a></p>
     </footer>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const eventDate = new Date('2024-12-10T12:00:00'); // Change this to your actual event date and time
-            const timerContainer = document.getElementById('timer');
-
-            function updateTimer() {
-                const now = new Date();
-                const diff = eventDate - now;
-
-                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-                timerContainer.innerHTML = `${days} days ${hours} hours ${minutes} minutes ${seconds} seconds`;
-            }
-
-            setInterval(updateTimer, 1000);
-        });
-    </script>
 </body>
 </html>
