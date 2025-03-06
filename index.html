@@ -1,22 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page Title</title>
-</head>
-<body>
-    <div id="content">Some content here...</div>
+<div id="countdown">
+    <p>Time until the event starts:</p>
+    <div id="timer"></div>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const eventDate = new Date('2024-12-10T12:00:00'); // Change this to your actual event date and time
+    const timerContainer = document.getElementById('timer');
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Your JavaScript code here
-            document.getElementById('content').innerHTML = 'Updated content';
-        });
-    </script>
-</body>
-</html>
+    function updateTimer() {
+        const now = new Date();
+        const diff = eventDate - now;
 
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+        timerContainer.innerHTML = `${days} days ${hours} hours ${minutes} minutes ${seconds} seconds`;
+    }
+
+    setInterval(updateTimer, 1000);
+});
+</script>
 <!DOCTYPE html>
 <html lang="en">
 <head>
