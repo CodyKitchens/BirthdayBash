@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guest Book</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        #guestbook-container { max-width: 600px; margin: auto; padding: 20px; background-color: #f4f4f4; border-radius: 10px; }
+        #messagesDisplay { background-color: #fff; border: 1px solid #ddd; padding: 10px; margin-top: 20px; height: 300px; overflow-y: scroll; }
+        textarea { width: 100%; height: 100px; padding: 10px; box-sizing: border-box; }
+        button { padding: 10px 20px; font-size: 16px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div id="guestbook-container">
+        <h2>Guest Book</h2>
+        <textarea id="messageInput" placeholder="Leave your message or note here..."></textarea>
+        <button onclick="submitMessage()">Submit</button>
+        <div id="messagesDisplay"></div>
+    </div>
+
+    <script>
+        function submitMessage() {
+            const input = document.getElementById('messageInput');
+            const display = document.getElementById('messagesDisplay');
+            const message = input.value.trim();
+            if (message) {
+                const currentMessages = JSON.parse(localStorage.getItem('messages')) || [];
+                currentMessages.push(message);
+                localStorage.setItem('messages', JSON.stringify(currentMessages));
+                displayMessages(); // Update display
+                input.value = ''; // Clear input after submission
+            }
+        }
+
+        function displayMessages() {
+            const messages = JSON.parse(localStorage.getItem('messages')) || [];
+            const display = document.getElementById('messagesDisplay');
+            display.innerHTML = messages.map(message => `<p>${message}</p>`).join('');
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            displayMessages(); // Display messages on load
+        });
+    </script>
+</body>
+</html>
