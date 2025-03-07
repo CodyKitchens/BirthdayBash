@@ -3,45 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Find Me - Event Locations</title>
+    <title>Event Locations - Cody's 40th Viking Funeral</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <style>
         body { font-family: Arial, sans-serif; }
-        #map { height: 400px; width: 100%; }
+        #map { height: 500px; width: 100%; } /* Adjusted for better visibility */
     </style>
 </head>
 <body>
-    <h1>Event Locations</h1>
+    <h1>Find Event Locations</h1>
     <div id="map"></div>
     <script>
-        var map = L.map('map').setView([33.2148, -97.1331], 13); // Center the map around Denton, TX
+        var map = L.map('map').setView([33.2148, -97.1331], 13); // Adjusted zoom level for better coverage of all locations
 
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 19,
             attribution: '© OpenStreetMap'
         }).addTo(map);
 
-        var addresses = [
-            "University of North Texas, Denton, TX",
-            "LSA Burger, Denton, TX",
-            "North Lakes Soccer Fields, 3892 Roselawn, Denton, TX"
+        // Predefined locations with latitude and longitude
+        var locations = [
+            {lat: 33.2009439, lon: -97.1448448, info: 'North Lakes Soccer Fields, 3892 Roselawn, Denton, TX'},
+            {lat: 33.2098926, lon: -97.1514762, info: 'University of North Texas, Denton, TX'},
+            {lat: 33.2397571, lon: -97.1559939, info: 'North Lakes Park, Denton, TX'},
+            {lat: 33.2142485, lon: -97.1331307, info: 'LSA Burger, Denton, TX'}
         ];
 
-        addresses.forEach(function(address) {
-            fetch(`https://nominatim.openstreetmap.org/search?format=json&limit=1&q=${encodeURI(address)}`)
-            .then(response => response.json())
-            .then(data => {
-                if (data.length > 0) {
-                    var latlng = [parseFloat(data[0].lat), parseFloat(data[0].lon)];
-                    L.marker(latlng).addTo(map)
-                      .bindPopup(address)
-                      .openPopup();
-                } else {
-                    console.error("No results found for: " + address);
-                }
-            })
-            .catch(error => console.error('Error fetching geocoding data:', error));
+        // Loop to create markers for each location
+        locations.forEach(function(location) {
+            var marker = L.marker([location.lat, location.lon]).addTo(map);
+            marker.bindPopup(location.info);
         });
     </script>
 </body>
