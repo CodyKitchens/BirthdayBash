@@ -1,61 +1,84 @@
+/* Importing Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Playfair+Display:wght@700&display=swap');
+
+/* Root Color Definitions */
+:root {
+    --primary-color: #2a9d8f; /* Teal */
+    --secondary-color: #264653; /* Dark Blue */
+    --accent-color: #e9c46a; /* Yellow */
+    --light-background: #f4f4f4; /* Off-white */
+    --text-color: #333333; /* Dark Grey */
+}
+
+/* Body and Defaults */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f6f8;
-    color: #333;
+    font-family: 'Nunito', sans-serif;
+    background-color: var(--light-background);
+    color: var(--text-color);
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 header, footer {
     text-align: center;
-    background-color: #0056b3; /* Deep blue */
-    color: #ffffff;
-    padding: 10px 0;
-}
-
-.main-content {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    max-width: 1200px;
-    margin: 20px auto;
     padding: 20px;
+    width: 100%;
+    background-color: var(--secondary-color);
+    color: white;
 }
 
-.profile-pic {
-    flex: 0 0 200px; /* fixed size for the image container */
-    margin-right: 20px; /* space between the image and the text */
+nav {
+    margin-top: 10px;
+    font-size: 18px;
 }
 
-.profile-pic img {
-    width: 100%; /* makes the image responsive within the container */
-    height: auto;
-    border-radius: 50%; /* circular image */
-}
-
-.event-details {
-    flex: 1; /* takes the remaining space */
-    text-align: left;
-}
-
-footer {
-    background-color: #222;
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
-}
-
-nav ul {
-    padding: 0;
-    list-style: none;
-}
-
-nav ul li {
-    display: inline;
-    margin-right: 20px;
-}
-
-nav ul li a {
-    color: #fff;
+nav a {
+    color: var(--accent-color);
     text-decoration: none;
+    margin: 0 15px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+    width: 90%;
+    max-width: 1200px;
+    box-sizing: border-box;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.button:hover {
+    transform: scale(1.1);
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
 }
