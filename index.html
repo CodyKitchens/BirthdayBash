@@ -35,10 +35,7 @@
         nav a:hover {
             text-decoration: underline;
         }
-        .main-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+        .main-content, .image-container, .text-content, .canvas-container {
             width: 90%;
             max-width: 960px;
             padding: 20px;
@@ -46,11 +43,7 @@
             background: #1a1a1a;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-        .image-container, .text-content {
-            width: 100%;
             text-align: center;
-            padding: 10px;
         }
         img {
             max-width: 300px;
@@ -67,6 +60,14 @@
             width: 100%;
             color: #ffffff;
         }
+        canvas {
+            width: 100%;
+            max-width: 800px; /* Adjust as necessary */
+            height: 400px; /* Adjust as necessary */
+            border: 1px solid #d4af37;
+            background-color: #ffffff;
+            margin: 20px auto;
+        }
     </style>
 </head>
 <body>
@@ -74,12 +75,12 @@
         <h1>Welcome to Cody's Viking Funeral</h1>
         <p>A fiery farewell to the 30s as I embark on the adventures of the 40s.</p>
         <nav>
-    <a href="index.html">Home</a>
-    <a href="register.html">Sign Up</a>
-    <a href="contestants.html">RSVP List</a>
-    <a href="guestbook.html">Guest Book</a>
-    <a href="findme.html">Event Locations</a>
-</nav>
+            <a href="index.html">Home</a>
+            <a href="register.html">Sign Up</a>
+            <a href="contestants.html">RSVP List</a>
+            <a href="guestbook.html">Guest Book</a>
+            <a href="findme.html">Event Locations</a>
+        </nav>
     </header>
     <div class="main-content">
         <div class="image-container">
@@ -100,6 +101,26 @@
         </div>
         <div class="image-container">
             <img src="images/Mugshot.jpeg" alt="Cody's Profile Picture">
+        </div>
+        <div class="canvas-container">
+            <canvas id="myCanvas"></canvas>
+            <script>
+                const canvas = document.getElementById('myCanvas');
+                const ctx = canvas.getContext('2d');
+                canvas.addEventListener('click', function(event) {
+                    addCircle(event.offsetX, event.offsetY);
+                });
+
+                function addCircle(x, y) {
+                    const radius = 30;
+                    const colors = ['red', 'green', 'blue', 'yellow', 'purple', 'orange'];
+                    const color = colors[Math.floor(Math.random() * colors.length)];
+                    ctx.fillStyle = color;
+                    ctx.beginPath();
+                    ctx.arc(x, y, radius, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+            </script>
         </div>
     </div>
     <footer>
