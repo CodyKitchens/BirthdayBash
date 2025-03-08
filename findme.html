@@ -33,8 +33,16 @@
         // Loop to create markers for each location
         locations.forEach(function(location) {
             var marker = L.marker([location.lat, location.lon]).addTo(map);
-            marker.bindPopup(location.info);
+            marker.bindPopup(`<b>${location.info}</b><br><button onclick="locationAction('${location.info}');">More Info</button>`);
         });
+
+        function locationAction(info) {
+            if (info.includes("North Lakes Soccer Fields")) {
+                alert('Come find me at the soccer fields!');
+            } else {
+                alert('You clicked the button for: ' + info);
+            }
+        }
     </script>
 </body>
 </html>
