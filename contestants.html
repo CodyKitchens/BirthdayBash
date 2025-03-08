@@ -88,6 +88,8 @@
                     contestantDiv.innerHTML = `
                         <h3>${contestant['Name']} (${contestant['Nickname'] || 'No nickname'})</h3>
                         <p>Attending: ${contestant['You in?']}</p>
+                        <p>Number attending (including kids): ${contestant['How many are coming with you (include kids if they are coming)']}</p>
+                        <p>Food Contributions: ${contestant['Bring some food! its a Feast. (Select what you can bring) [Meats ]']}, ${contestant['Bring some food! its a Feast. (Select what you can bring) [Fast Food ( French fries, nuggets, tacos ,etc )]']}, ${contestant['Bring some food! its a Feast. (Select what you can bring) [Potatoes (all forms welcome)]']}, ${contestant['Bring some food! its a Feast. (Select what you can bring) [Desserts ]']}, ${contestant['Bring some food! its a Feast. (Select what you can bring) [Drinks (Kid friendly)]']}, ${contestant['Bring some food! its a Feast. (Select what you can bring) [Drinks ( Adult Friendly)]']}, ${contestant['Bring some food! its a Feast. (Select what you can bring) [Kid food (also nuggets, tacos, etc)]']}, ${contestant['Bring some food! its a Feast. (Select what you can bring) [Rolls]']}</p>
                         <p>Birthday Note: ${contestant["If you can't make it. Leave him a birthday note."] || "No note left."}</p>
                     `;
                     contestantsDiv.appendChild(contestantDiv);
@@ -115,4 +117,7 @@
         });
     </script>
     <footer>
-        <
+        <p>Contact: <a href="mailto:Cody.Kitchens@gmail.com">Cody.Kitchens@gmail.com</a></p>
+    </footer>
+</body>
+</html>
