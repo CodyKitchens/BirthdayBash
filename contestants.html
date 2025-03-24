@@ -53,8 +53,14 @@
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
             overflow: auto;
         }
-        #itemsBrought {
-            background: #f4f4f4;
+        #timerSection {
+            width: 100%;
+            text-align: center;
+            margin: 20px 0;
+        }
+        #timer {
+            font-size: 24px;
+            color: #d4af37;
         }
     </style>
 </head>
@@ -69,6 +75,10 @@
             <a href="findme.html">Event Locations</a>
         </nav>
     </header>
+    <div id="timerSection">
+        <h2>Countdown to Event</h2>
+        <div id="timer">Loading timer...</div>
+    </div>
     <div class="container">
         <div class="side" id="contestants">
             <!-- Dynamically loaded guest names and guest count from Google Sheets will be displayed here -->
@@ -76,15 +86,12 @@
         <div class="side" id="itemsBrought">
             <h2>Items Being Brought</h2>
             <ul>
-                <li>Steaks - John Doe</li>
-                <li>Salad - Jane Smith</li>
+                <li>Jimothy -Potatoes, Desserts, Kid Drinks, Adult Drinks</li>
+                <li>Laurie - Kid Drinks, Adult Drinks, Kid Food</li>
+                <li>Broseph - Adult Drinks</li>
                 <!-- More items can be added here manually -->
             </ul>
         </div>
-    </div>
-    <div id="timerSection">
-        <h2>Countdown to Event</h2>
-        <div id="timer">Loading timer...</div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
     <script>
@@ -111,8 +118,8 @@
             })
             .catch(error => console.error('Error loading guest data:', error));
 
-            // Countdown Timer
-            const eventDate = new Date('2025-04-12T18:00:00-05:00');
+            // Countdown Timer Script
+            const eventDate = new Date('2025-04-12T18:00:00-05:00'); // Countdown to 6 PM CDT, April 12, 2025
             const timerContainer = document.getElementById('timer');
             function updateTimer() {
                 const now = new Date();
@@ -125,6 +132,7 @@
 
                 timerContainer.innerHTML = `${days} days ${hours} hours ${minutes} minutes ${seconds} seconds remaining`;
             }
+
             setInterval(updateTimer, 1000);
         });
     </script>
@@ -133,4 +141,3 @@
     </footer>
 </body>
 </html>
-
